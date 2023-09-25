@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 from nipype.interfaces import fsl
 from nilearn.plotting import plot_anat
 import numpy as np
