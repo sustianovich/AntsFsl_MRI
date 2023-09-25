@@ -4,6 +4,7 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 
+print('hello')
 
 path_t1 = 'data/sub-1/sub-1_ses-timepoint1_run-1_T1w.nii.gz'
 path_figures = 'figures'
