@@ -14,12 +14,12 @@ def plot_middle(data, slice_no=None):
 
 
 def registration(src_path, dst_path, ref_path):
-    command = ["flirt", "-in", src_path, "-ref", ref_path, "-out", dst_path,
-               "-bins", "256", "-cost", "corratio", "-searchrx", "0", "0",
-               "-searchry", "0", "0", "-searchrz", "0", "0", "-dof", "12",
-               "-interp", "spline"]
-    subprocess.call(command, stdout=open(os.devnull, "r"),
-                    stderr=subprocess.STDOUT)
+    # command = ["flirt", "-in", src_path, "-ref", ref_path, "-out", dst_path,
+    #            "-bins", "256", "-cost", "corratio", "-searchrx", "0", "0",
+    #            "-searchry", "0", "0", "-searchrz", "0", "0", "-dof", "12",
+    #            "-interp", "spline"]
+    command = ["flirt", "-in", src_path, "-ref", ref_path, "-out", dst_path]
+    subprocess.call(command, stdout=open(os.devnull, "r"), stderr=subprocess.STDOUT)
     return
 
 
@@ -78,4 +78,4 @@ pool.map(unwarp_main, paras)
 ref_path = 'data'
 data_src_paths = 'sub-1/sub-1_ses-timepoint1_run-1_T1w.nii.gz', 'sub-1/sub-1_ses-timepoint1_inplaneT2.nii.gz'
 data_dst_paths = 'results/registration', 'results/segmentation'
-main(data_src_paths[0], data_dst_paths[0], ref_path)
+main(data_src_paths[1], data_dst_paths[0], ref_path)
