@@ -28,6 +28,7 @@ mcflirt = Node(MCFLIRT(mean_vol=True, save_plots=True), name="mcflirt")
 
 # Use the following tissue specification to get a GM and WM probability map
 tpm_img ='data/template/TPM.nii'
+
 tissue1 = ((tpm_img, 1), 1, (True,False), (False, False))
 tissue2 = ((tpm_img, 2), 1, (True,False), (False, False))
 tissue3 = ((tpm_img, 3), 2, (True,False), (False, False))
@@ -40,13 +41,14 @@ tissues = [tissue1, tissue2, tissue3, tissue4, tissue5, tissue6]
 segment = Node(NewSegment(tissues=tissues), name='segment')
 
 # Specify example input file
-anat_file = 'data/ADNI/AD/sub-1_ses-timepoint1_run-1_T1w.nii.gz'
+anat_file = 'data/sub-001/ADNI/AD/sub-1_ses-timepoint1_run-1_T1w.nii.gz'
 # Initiate Gunzip node
 gunzip_anat = Node(Gunzip(in_file=anat_file), name='gunzip_anat')
 
 preproc.connect([(gunzip_anat, segment, [('out_file', 'channel_files')])])
 
 schedule_path = os.path.join(home_directory, 'fsl/src/fsl-flirt/flirtsch/bbr.sch')
+coreg = Node(FLIRT(dof=6, cost='bbr', schedule=schedule_path, output_type='NIFTI'), name="coreg")
 
 # Connect FLIRT node to the other nodes here
 
@@ -171,20 +173,13 @@ preproc.connect([(susan, mask_func, [('outputnode.smoothed_files', 'in_file')]),
 # 
 # Last but not least. Let's use Nipype's `TSNR` module to remove linear and quadratic trends in the functionally smoothed images. For this, you only have to specify the `regress_poly` parameter in the node initiation.
 
-
-from nipype.algorithms.confounds import TSNR
-
 # Initiate TSNR node here
-
 
 detrend = Node(TSNR(regress_poly=2), name="detrend")
 
-
 # Connect the detrend node to the other nodes here
 
-
 preproc.connect([(mask_func, detrend, [('out_file', 'in_file')])])
-
 
 # ## Datainput with `SelectFiles` and `iterables` 
 # 
@@ -193,27 +188,32 @@ preproc.connect([(mask_func, detrend, [('out_file', 'in_file')])])
 # For this, we need `SelectFiles` and `iterables`! It's rather simple, specify a template and fill-up the placeholder variables.
 
 # Import the SelectFiles
-from nipype import SelectFiles
 
 # String template with {}-based strings
-templates = {'anat': 'sub-{subject_id}/ses-{ses_id}/anat/'
+'''
+templates = {'AD': 'sub-{subject_id}/ses-{ses_id}/anat/'
                      'sub-{subject_id}_ses-test_T1w.nii.gz',
-             'func': 'sub-{subject_id}/ses-{ses_id}/func/'
+             'NC': 'sub-{subject_id}/ses-{ses_id}/func/'
                      'sub-{subject_id}_ses-{ses_id}_task-{task_id}_bold.nii.gz'}
 
 # Create SelectFiles node
 sf = Node(SelectFiles(templates,
-                      base_directory='/data/ADNI/AD/',
+                      base_directory='/data/ADNI/',
                       sort_filelist=True),
           name='selectfiles')
-sf.inputs.ses_id='test'
-sf.inputs.task_id='fingerfootlips'
-
-# Now we can specify over which subjects the workflow should iterate. To test the workflow, let's still just look at subject 7.
-
-
-subject_list = ['07']
+sf.inputs.ses_id='timepoint1_run-1'
+sf.inputs.task_id='0.3_brain'
+subject_list = ['1']
 sf.iterables = [('subject_id', subject_list)]
+'''
+
+templates = dict(T1="sub-{subject_id}/ADNI/AD/sub-1_ses-timepoint1_run-1_T1w_0.3_brain.nii.gz",
+                 T2="sub-{subject_id}/ADNI/AD/sub-1_ses-timepoint1_inplaneT2.nii.gz")
+
+sf = Node(SelectFiles(templates,
+                      base_directory='data',
+                      sort_filelist=True),
+          name='selectfiles')
 
 # ## Visualize the workflow
 # 
@@ -223,8 +223,8 @@ sf.iterables = [('subject_id', subject_list)]
 preproc.write_graph(graph2use='colored', format='png', simple_form=True)
 
 # Visualize the graph
-from IPython.display import Image
-Image(filename='/output/work_preproc/graph.png', width=750)
+
+# Image(filename='/data/sub-001/results/registration/graph.png', width=750)
 
 # ##  Run the Workflow
 # 
