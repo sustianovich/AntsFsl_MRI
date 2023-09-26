@@ -13,6 +13,11 @@ from nipype.interfaces.fsl import Threshold
 from niflow.nipype1.workflows.fmri.fsl.preprocess import create_susan_smooth
 from nipype.interfaces.fsl import ApplyMask
 from nipype import MapNode
+from nipype.algorithms.confounds import TSNR
+from nipype import SelectFiles
+from IPython.display import Image
+
+home_directory = os.path.expanduser("~")
 
 in_file = 'data/ADNI/AD/sub-1_ses-timepoint1_run-1_T1w.nii.gz'
 preproc = Workflow(name='work_preproc', base_dir=os.path.abspath(in_file))
@@ -22,7 +27,8 @@ extract = Node(ExtractROI(t_min=4, t_size=-1, output_type='NIFTI'), name="extrac
 mcflirt = Node(MCFLIRT(mean_vol=True, save_plots=True), name="mcflirt")
 
 # Use the following tissue specification to get a GM and WM probability map
-tpm_img ='/opt/spm12-r7219/spm12_mcr/spm12/tpm/TPM.nii'
+tpm_img = os.path.join(home_directory, 'data/template/TPM.nii')
+
 tissue1 = ((tpm_img, 1), 1, (True,False), (False, False))
 tissue2 = ((tpm_img, 2), 1, (True,False), (False, False))
 tissue3 = ((tpm_img, 3), 2, (True,False), (False, False))
@@ -41,7 +47,7 @@ gunzip_anat = Node(Gunzip(in_file=anat_file), name='gunzip_anat')
 
 preproc.connect([(gunzip_anat, segment, [('out_file', 'channel_files')])])
 
-coreg = Node(FLIRT(dof=6, cost='bbr', schedule='/usr/share/fsl/5.0/etc/flirtsch/bbr.sch', output_type='NIFTI'), name="coreg")
+coreg = Node(FLIRT(dof=6, cost='bbr', schedule='fsl/src/fsl-flirt/bbr.sch', output_type='NIFTI'), name="coreg")
 
 # Connect FLIRT node to the other nodes here
 
@@ -167,7 +173,7 @@ preproc.connect([(susan, mask_func, [('outputnode.smoothed_files', 'in_file')]),
 # Last but not least. Let's use Nipype's `TSNR` module to remove linear and quadratic trends in the functionally smoothed images. For this, you only have to specify the `regress_poly` parameter in the node initiation.
 
 
-from nipype.algorithms.confounds import TSNR
+
 
 # Initiate TSNR node here
 
@@ -188,7 +194,7 @@ preproc.connect([(mask_func, detrend, [('out_file', 'in_file')])])
 # For this, we need `SelectFiles` and `iterables`! It's rather simple, specify a template and fill-up the placeholder variables.
 
 # Import the SelectFiles
-from nipype import SelectFiles
+
 
 # String template with {}-based strings
 templates = {'anat': 'sub-{subject_id}/ses-{ses_id}/anat/'
@@ -218,7 +224,7 @@ sf.iterables = [('subject_id', subject_list)]
 preproc.write_graph(graph2use='colored', format='png', simple_form=True)
 
 # Visualize the graph
-from IPython.display import Image
+
 Image(filename='/output/work_preproc/graph.png', width=750)
 
 # ##  Run the Workflow
