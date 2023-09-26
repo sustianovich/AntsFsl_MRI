@@ -46,7 +46,7 @@ gunzip_anat = Node(Gunzip(in_file=anat_file), name='gunzip_anat')
 
 preproc.connect([(gunzip_anat, segment, [('out_file', 'channel_files')])])
 
-schedule_path = os.path.join(home_directory, 'fsl/src/fsl-flirt/bbr.sch')
+schedule_path = os.path.join(home_directory, 'fsl/src/fsl-flirt/flirtsch/bbr.sch')
 
 # Connect FLIRT node to the other nodes here
 
