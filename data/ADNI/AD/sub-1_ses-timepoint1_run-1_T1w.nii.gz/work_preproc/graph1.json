@@ -1,0 +1,247 @@
+{
+    "groups": [
+        {
+            "name": "Group_00001",
+            "procs": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+            ],
+            "total": 16
+        }
+    ],
+    "links": [
+        {
+            "source": 0,
+            "target": 2,
+            "value": 1
+        },
+        {
+            "source": 0,
+            "target": 5,
+            "value": 1
+        },
+        {
+            "source": 1,
+            "target": 5,
+            "value": 1
+        },
+        {
+            "source": 3,
+            "target": 5,
+            "value": 1
+        },
+        {
+            "source": 2,
+            "target": 3,
+            "value": 1
+        },
+        {
+            "source": 1,
+            "target": 7,
+            "value": 1
+        },
+        {
+            "source": 5,
+            "target": 7,
+            "value": 1
+        },
+        {
+            "source": 0,
+            "target": 7,
+            "value": 1
+        },
+        {
+            "source": 2,
+            "target": 4,
+            "value": 1
+        },
+        {
+            "source": 4,
+            "target": 6,
+            "value": 1
+        },
+        {
+            "source": 6,
+            "target": 14,
+            "value": 1
+        },
+        {
+            "source": 13,
+            "target": 14,
+            "value": 1
+        },
+        {
+            "source": 14,
+            "target": 15,
+            "value": 1
+        },
+        {
+            "source": 7,
+            "target": 8,
+            "value": 1
+        },
+        {
+            "source": 6,
+            "target": 8,
+            "value": 1
+        },
+        {
+            "source": 7,
+            "target": 9,
+            "value": 1
+        },
+        {
+            "source": 6,
+            "target": 9,
+            "value": 1
+        },
+        {
+            "source": 9,
+            "target": 10,
+            "value": 1
+        },
+        {
+            "source": 8,
+            "target": 11,
+            "value": 1
+        },
+        {
+            "source": 10,
+            "target": 11,
+            "value": 1
+        },
+        {
+            "source": 8,
+            "target": 12,
+            "value": 1
+        },
+        {
+            "source": 11,
+            "target": 12,
+            "value": 1
+        },
+        {
+            "source": 7,
+            "target": 12,
+            "value": 1
+        },
+        {
+            "source": 12,
+            "target": 13,
+            "value": 1
+        }
+    ],
+    "maxN": 16,
+    "nodes": [
+        {
+            "group": 1,
+            "name": "0_gunzip_anat",
+            "report": "/gunzip_anat/_report/report.rst",
+            "result": "/gunzip_anat/result_gunzip_anat.pklz"
+        },
+        {
+            "group": 1,
+            "name": "1_mcflirt",
+            "report": "/mcflirt/_report/report.rst",
+            "result": "/mcflirt/result_mcflirt.pklz"
+        },
+        {
+            "group": 1,
+            "name": "2_segment",
+            "report": "/segment/_report/report.rst",
+            "result": "/segment/result_segment.pklz"
+        },
+        {
+            "group": 1,
+            "name": "3_threshold_WM",
+            "report": "/threshold_WM/_report/report.rst",
+            "result": "/threshold_WM/result_threshold_WM.pklz"
+        },
+        {
+            "group": 1,
+            "name": "4_resample",
+            "report": "/resample/_report/report.rst",
+            "result": "/resample/result_resample.pklz"
+        },
+        {
+            "group": 1,
+            "name": "5_coreg",
+            "report": "/coreg/_report/report.rst",
+            "result": "/coreg/result_coreg.pklz"
+        },
+        {
+            "group": 1,
+            "name": "6_mask_GM",
+            "report": "/mask_GM/_report/report.rst",
+            "result": "/mask_GM/result_mask_GM.pklz"
+        },
+        {
+            "group": 1,
+            "name": "7_applywarp",
+            "report": "/applywarp/_report/report.rst",
+            "result": "/applywarp/result_applywarp.pklz"
+        },
+        {
+            "group": 1,
+            "name": "8_median",
+            "report": "/susan/median/_report/report.rst",
+            "result": "/susan/median/result_median.pklz"
+        },
+        {
+            "group": 1,
+            "name": "9_mask",
+            "report": "/susan/mask/_report/report.rst",
+            "result": "/susan/mask/result_mask.pklz"
+        },
+        {
+            "group": 1,
+            "name": "10_meanfunc2",
+            "report": "/susan/meanfunc2/_report/report.rst",
+            "result": "/susan/meanfunc2/result_meanfunc2.pklz"
+        },
+        {
+            "group": 1,
+            "name": "11_merge",
+            "report": "/susan/merge/_report/report.rst",
+            "result": "/susan/merge/result_merge.pklz"
+        },
+        {
+            "group": 1,
+            "name": "12_multi_inputs",
+            "report": "/susan/multi_inputs/_report/report.rst",
+            "result": "/susan/multi_inputs/result_multi_inputs.pklz"
+        },
+        {
+            "group": 1,
+            "name": "13_smooth",
+            "report": "/susan/smooth/_report/report.rst",
+            "result": "/susan/smooth/result_smooth.pklz"
+        },
+        {
+            "group": 1,
+            "name": "14_mask_func",
+            "report": "/mask_func/_report/report.rst",
+            "result": "/mask_func/result_mask_func.pklz"
+        },
+        {
+            "group": 1,
+            "name": "15_detrend",
+            "report": "/detrend/_report/report.rst",
+            "result": "/detrend/result_detrend.pklz"
+        }
+    ]
+}

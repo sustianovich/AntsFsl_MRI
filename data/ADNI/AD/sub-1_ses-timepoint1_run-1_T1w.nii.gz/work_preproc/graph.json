@@ -1,0 +1,136 @@
+[
+    {
+        "group": 1,
+        "imports": [],
+        "name": "00_gunzip_anat",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [],
+        "name": "01_mcflirt",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "00_gunzip_anat"
+        ],
+        "name": "02_segment",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "02_segment"
+        ],
+        "name": "03_threshold_WM",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "02_segment"
+        ],
+        "name": "04_resample",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "00_gunzip_anat",
+            "01_mcflirt",
+            "03_threshold_WM"
+        ],
+        "name": "05_coreg",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "04_resample"
+        ],
+        "name": "06_mask_GM",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "01_mcflirt",
+            "05_coreg",
+            "00_gunzip_anat"
+        ],
+        "name": "07_applywarp",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "07_applywarp",
+            "06_mask_GM"
+        ],
+        "name": "08_median",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "07_applywarp",
+            "06_mask_GM"
+        ],
+        "name": "09_mask",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "09_mask"
+        ],
+        "name": "10_meanfunc2",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "08_median",
+            "10_meanfunc2"
+        ],
+        "name": "11_merge",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "08_median",
+            "11_merge",
+            "07_applywarp"
+        ],
+        "name": "12_multi_inputs",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "12_multi_inputs"
+        ],
+        "name": "13_smooth",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "06_mask_GM",
+            "13_smooth"
+        ],
+        "name": "14_mask_func",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "14_mask_func"
+        ],
+        "name": "15_detrend",
+        "size": 1
+    }
+]
