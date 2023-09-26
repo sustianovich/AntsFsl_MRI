@@ -27,7 +27,7 @@ extract = Node(ExtractROI(t_min=4, t_size=-1, output_type='NIFTI'), name="extrac
 mcflirt = Node(MCFLIRT(mean_vol=True, save_plots=True), name="mcflirt")
 
 # Use the following tissue specification to get a GM and WM probability map
-tpm_img ='/data/template/TPM.nii'
+tpm_img ='data/template/TPM.nii'
 tissue1 = ((tpm_img, 1), 1, (True,False), (False, False))
 tissue2 = ((tpm_img, 2), 1, (True,False), (False, False))
 tissue3 = ((tpm_img, 3), 2, (True,False), (False, False))
