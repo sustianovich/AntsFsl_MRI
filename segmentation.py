@@ -15,15 +15,6 @@ from nipype.algorithms.confounds import TSNR
 from nipype import SelectFiles
 from IPython.display import Image
 
-from utils_tools import find_files
-
-words_to_search = ['t1w', 'brain']
-paths_to_files = find_files(words_to_search)
-
-home_directory = os.path.expanduser("~")
-
-in_file = paths_to_files[0]
-
 preproc = Workflow(name='work_preproc', base_dir=os.path.abspath(in_file))
 
 extract = Node(ExtractROI(t_min=4, t_size=-1, output_type='NIFTI'), name="extract")
