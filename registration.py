@@ -2,7 +2,7 @@ import os
 import subprocess
 import matplotlib.pyplot as plt
 from multiprocessing import Pool, cpu_count
-
+from niflow.nipype1.workflows.fmri.fsl import preprocess 
 
 def plot_middle(data, slice_no=None):
     if not slice_no:
@@ -51,14 +51,13 @@ def main(src_path, dst_path, ref_path):
 
 
 parent_dir = os.path.dirname(os.getcwd())
-data_dir = os.path.join(parent_dir, "data")
+data_dir = os.path.join(parent_dir, "AntsFsl_MRI/data")
 data_src_dir = os.path.join(data_dir, "ADNI")
 data_dst_dir = os.path.join(data_dir, "ADNIReg")
 data_labels = ["AD", "NC"]
-create_dir(data_dst_dir)
+# create_dir(data_dst_dir)
 
-ref_path = os.path.join(data_dir, "Template", "MNI152_T1_1mm.nii.gz")
-# ref_path = os.path.join(data_dir, "Template", "MNI152_T1_1mm_brain.nii.gz")
+ref_path = os.path.join(data_dir, "template", "MNI152_T1_1mm_brain.nii.gz")
 
 data_src_paths, data_dst_paths = [], []
 for label in data_labels:
@@ -69,11 +68,14 @@ for label in data_labels:
         data_src_paths.append(os.path.join(src_label_dir, subject))
         data_dst_paths.append(os.path.join(dst_label_dir, subject))
 
-# Test
-# main(data_src_paths[0], data_dst_paths[0], ref_path)
-
 # Multi-processing
 paras = zip(data_src_paths, data_dst_paths,
             [ref_path] * len(data_src_paths))
 pool = Pool(processes=cpu_count())
 pool.map(unwarp_main, paras)
+
+# Test
+ref_path = 'data'
+data_src_paths = 'sub-1/sub-1_ses-timepoint1_run-1_T1w.nii.gz', 'sub-1/sub-1_ses-timepoint1_inplaneT2.nii.gz'
+data_dst_paths = 'results/registration', 'results/segmentation'
+main(data_src_paths[0], data_dst_paths[0], ref_path)
