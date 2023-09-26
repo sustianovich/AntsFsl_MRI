@@ -1,6 +1,4 @@
 import os
-import nibabel as nb
-import matplotlib.pyplot as plt
 
 from nilearn import plotting
 from nipype import Node, Workflow
@@ -17,9 +15,6 @@ from nipype.algorithms.confounds import TSNR
 from nipype import SelectFiles
 from IPython.display import Image
 
-home_directory = os.path.expanduser("~")
-
-in_file = 'data/ADNI/AD/sub-1_ses-timepoint1_run-1_T1w.nii.gz'
 preproc = Workflow(name='work_preproc', base_dir=os.path.abspath(in_file))
 
 extract = Node(ExtractROI(t_min=4, t_size=-1, output_type='NIFTI'), name="extract")
