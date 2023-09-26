@@ -14,6 +14,7 @@ from niflow.nipype1.workflows.fmri.fsl.preprocess import create_susan_smooth
 from nipype.interfaces.fsl import ApplyMask
 from nipype import MapNode
 
+home_directory = os.path.expanduser("~")
 in_file = 'data/ADNI/AD/sub-1_ses-timepoint1_run-1_T1w.nii.gz'
 preproc = Workflow(name='work_preproc', base_dir=os.path.abspath(in_file))
 
@@ -22,7 +23,7 @@ extract = Node(ExtractROI(t_min=4, t_size=-1, output_type='NIFTI'), name="extrac
 mcflirt = Node(MCFLIRT(mean_vol=True, save_plots=True), name="mcflirt")
 
 # Use the following tissue specification to get a GM and WM probability map
-tpm_img ='/opt/spm12-r7219/spm12_mcr/spm12/tpm/TPM.nii'
+tpm_img = os.path.join(home_directory, 'data/template/TPM.nii')
 tissue1 = ((tpm_img, 1), 1, (True,False), (False, False))
 tissue2 = ((tpm_img, 2), 1, (True,False), (False, False))
 tissue3 = ((tpm_img, 3), 2, (True,False), (False, False))
