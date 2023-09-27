@@ -1,0 +1,152 @@
+[
+    {
+        "group": 1,
+        "imports": [],
+        "name": "00_mcflirt",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [],
+        "name": "01_selectfiles",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "00_mcflirt"
+        ],
+        "name": "02_art",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "01_selectfiles"
+        ],
+        "name": "03_gunzip_anat",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "03_gunzip_anat"
+        ],
+        "name": "04_segment",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "04_segment"
+        ],
+        "name": "05_threshold_WM",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "04_segment"
+        ],
+        "name": "06_resample",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "03_gunzip_anat",
+            "05_threshold_WM",
+            "00_mcflirt"
+        ],
+        "name": "07_coreg",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "06_resample"
+        ],
+        "name": "08_mask_GM",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "03_gunzip_anat",
+            "07_coreg",
+            "00_mcflirt"
+        ],
+        "name": "09_applywarp",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "09_applywarp",
+            "08_mask_GM"
+        ],
+        "name": "10_median",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "09_applywarp",
+            "08_mask_GM"
+        ],
+        "name": "11_mask",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "11_mask"
+        ],
+        "name": "12_meanfunc2",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "10_median",
+            "12_meanfunc2"
+        ],
+        "name": "13_merge",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "09_applywarp",
+            "10_median",
+            "13_merge"
+        ],
+        "name": "14_multi_inputs",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "14_multi_inputs"
+        ],
+        "name": "15_smooth",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "08_mask_GM",
+            "15_smooth"
+        ],
+        "name": "16_mask_func",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "16_mask_func"
+        ],
+        "name": "17_detrend",
+        "size": 1
+    }
+]
