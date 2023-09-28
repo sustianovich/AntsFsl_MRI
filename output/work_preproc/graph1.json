@@ -9,20 +9,9 @@
                 3,
                 4,
                 5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16,
-                17
+                6
             ],
-            "total": 18
+            "total": 7
         }
     ],
     "links": [
@@ -43,121 +32,26 @@
         },
         {
             "source": 3,
-            "target": 7,
+            "target": 6,
             "value": 1
         },
         {
             "source": 5,
-            "target": 7,
+            "target": 6,
             "value": 1
         },
         {
             "source": 0,
-            "target": 7,
+            "target": 6,
             "value": 1
         },
         {
             "source": 4,
             "target": 5,
             "value": 1
-        },
-        {
-            "source": 3,
-            "target": 9,
-            "value": 1
-        },
-        {
-            "source": 7,
-            "target": 9,
-            "value": 1
-        },
-        {
-            "source": 0,
-            "target": 9,
-            "value": 1
-        },
-        {
-            "source": 4,
-            "target": 6,
-            "value": 1
-        },
-        {
-            "source": 6,
-            "target": 8,
-            "value": 1
-        },
-        {
-            "source": 8,
-            "target": 16,
-            "value": 1
-        },
-        {
-            "source": 15,
-            "target": 16,
-            "value": 1
-        },
-        {
-            "source": 16,
-            "target": 17,
-            "value": 1
-        },
-        {
-            "source": 9,
-            "target": 10,
-            "value": 1
-        },
-        {
-            "source": 8,
-            "target": 10,
-            "value": 1
-        },
-        {
-            "source": 9,
-            "target": 11,
-            "value": 1
-        },
-        {
-            "source": 8,
-            "target": 11,
-            "value": 1
-        },
-        {
-            "source": 11,
-            "target": 12,
-            "value": 1
-        },
-        {
-            "source": 10,
-            "target": 13,
-            "value": 1
-        },
-        {
-            "source": 12,
-            "target": 13,
-            "value": 1
-        },
-        {
-            "source": 9,
-            "target": 14,
-            "value": 1
-        },
-        {
-            "source": 10,
-            "target": 14,
-            "value": 1
-        },
-        {
-            "source": 13,
-            "target": 14,
-            "value": 1
-        },
-        {
-            "source": 14,
-            "target": 15,
-            "value": 1
         }
     ],
-    "maxN": 18,
+    "maxN": 7,
     "nodes": [
         {
             "group": 1,
@@ -168,8 +62,8 @@
         {
             "group": 1,
             "name": "1_selectfiles",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/selectfiles/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/selectfiles/result_selectfiles.pklz"
+            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_aaa0001/selectfiles/_report/report.rst",
+            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_aaa0001/selectfiles/result_selectfiles.pklz"
         },
         {
             "group": 1,
@@ -180,92 +74,26 @@
         {
             "group": 1,
             "name": "3_gunzip_anat",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/gunzip_anat/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/gunzip_anat/result_gunzip_anat.pklz"
+            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_aaa0001/gunzip_anat/_report/report.rst",
+            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_aaa0001/gunzip_anat/result_gunzip_anat.pklz"
         },
         {
             "group": 1,
             "name": "4_segment",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/segment/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/segment/result_segment.pklz"
+            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_aaa0001/segment/_report/report.rst",
+            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_aaa0001/segment/result_segment.pklz"
         },
         {
             "group": 1,
             "name": "5_threshold_WM",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/threshold_WM/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/threshold_WM/result_threshold_WM.pklz"
+            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_aaa0001/threshold_WM/_report/report.rst",
+            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_aaa0001/threshold_WM/result_threshold_WM.pklz"
         },
         {
             "group": 1,
-            "name": "6_resample",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/resample/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/resample/result_resample.pklz"
-        },
-        {
-            "group": 1,
-            "name": "7_coreg",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/coreg/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/coreg/result_coreg.pklz"
-        },
-        {
-            "group": 1,
-            "name": "8_mask_GM",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/mask_GM/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/mask_GM/result_mask_GM.pklz"
-        },
-        {
-            "group": 1,
-            "name": "9_applywarp",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/applywarp/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/applywarp/result_applywarp.pklz"
-        },
-        {
-            "group": 1,
-            "name": "10_median",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//susan/_subject_id_001/median/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//susan/_subject_id_001/median/result_median.pklz"
-        },
-        {
-            "group": 1,
-            "name": "11_mask",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//susan/_subject_id_001/mask/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//susan/_subject_id_001/mask/result_mask.pklz"
-        },
-        {
-            "group": 1,
-            "name": "12_meanfunc2",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//susan/_subject_id_001/meanfunc2/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//susan/_subject_id_001/meanfunc2/result_meanfunc2.pklz"
-        },
-        {
-            "group": 1,
-            "name": "13_merge",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//susan/_subject_id_001/merge/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//susan/_subject_id_001/merge/result_merge.pklz"
-        },
-        {
-            "group": 1,
-            "name": "14_multi_inputs",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//susan/_subject_id_001/multi_inputs/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//susan/_subject_id_001/multi_inputs/result_multi_inputs.pklz"
-        },
-        {
-            "group": 1,
-            "name": "15_smooth",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//susan/_subject_id_001/smooth/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//susan/_subject_id_001/smooth/result_smooth.pklz"
-        },
-        {
-            "group": 1,
-            "name": "16_mask_func",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/mask_func/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/mask_func/result_mask_func.pklz"
-        },
-        {
-            "group": 1,
-            "name": "17_detrend",
-            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/detrend/_report/report.rst",
-            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_001/detrend/result_detrend.pklz"
+            "name": "6_coreg",
+            "report": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_aaa0001/coreg/_report/report.rst",
+            "result": "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI//_subject_id_aaa0001/coreg/result_coreg.pklz"
         }
     ]
 }

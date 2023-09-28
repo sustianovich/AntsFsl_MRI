@@ -153,7 +153,7 @@ sf = Node(SelectFiles(templates,
 sf.inputs.ses_id='test'
 sf.inputs.task_id='fingerfootlips'
 
-subject_list = ['ds000001']
+subject_list = ['aaa0001']
 sf.iterables = [('subject_id', subject_list)]
 
 preproc.connect([(sf, gunzip_anat, [('anat', 'in_file')])])
@@ -167,3 +167,20 @@ preproc.write_graph(graph2use='colored', dotfilename='output/work_preproc/graph_
 # Visualize the graph
 from IPython.display import Image
 Image(filename='output/work_preproc/graph_colored.png', width=750)
+
+preproc.run('MultiProc', plugin_args={'n_procs': 3})
+
+# #%%
+# !tree output/work_preproc/ -I '*js|*json|*pklz|_report|*dot|*html|*txt|*.m'
+
+# Plot the motion paramters
+import numpy as np
+import matplotlib.pyplot as plt
+par = np.loadtxt('/output/work_preproc/_subject_id_AAA0001/mcflirt/'
+                 'asub-07_ses-test_task-fingerfootlips_bold_roi_mcf.nii.gz.par')
+fig, axes = plt.subplots(2, 1, figsize=(15, 5))
+axes[0].set_ylabel('rotation (radians)')
+axes[0].plot(par[0:, :3])
+axes[1].plot(par[0:, 3:])
+axes[1].set_xlabel('time (TR)')
+axes[1].set_ylabel('translation (mm)');
