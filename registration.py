@@ -76,6 +76,6 @@ pool.map(unwarp_main, paras)
 
 # Test
 ref_path = 'data'
-data_src_paths = 'sub-1/sub-1_ses-timepoint1_run-1_T1w.nii.gz', 'sub-1/sub-1_ses-timepoint1_inplaneT2.nii.gz'
-data_dst_paths = 'results/registration', 'results/segmentation'
+data_src_paths = 'sub-aaa0001/sub-aaa0001_ses-timepoint1_run-1_T1w.nii.gz', 'sub-aaa0001/sub-aaa0001_ses-timepoint1_inplaneT2.nii.gz'
+data_dst_paths = 'output/registration', 'output/segmentation'
 main(data_src_paths[1], data_dst_paths[0], ref_path)
