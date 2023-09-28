@@ -176,11 +176,28 @@ preproc.run('MultiProc', plugin_args={'n_procs': 3})
 # Plot the motion paramters
 import numpy as np
 import matplotlib.pyplot as plt
-par = np.loadtxt('/output/work_preproc/_subject_id_AAA0001/mcflirt/'
+par = np.loadtxt('/output/work_preproc/mcflirt/'
                  'asub-07_ses-test_task-fingerfootlips_bold_roi_mcf.nii.gz.par')
 fig, axes = plt.subplots(2, 1, figsize=(15, 5))
 axes[0].set_ylabel('rotation (radians)')
 axes[0].plot(par[0:, :3])
 axes[1].plot(par[0:, 3:])
 axes[1].set_xlabel('time (TR)')
-axes[1].set_ylabel('translation (mm)');
+axes[1].set_ylabel('translation (mm)')
+
+from nilearn import image as nli
+from nilearn.plotting import plot_stat_map
+
+# Masks and Probability maps
+
+# Let's see what all the masks and probability maps look like.
+# For this, we will use `nilearn`'s `plot_anat` function.
+
+output = '/output/work_preproc/_subject_id_aaa0001/'
+
+# First, let's look at the tissue probability maps.
+
+anat = output + 'gunzip_anat/sub-aaa0001_ses-001_T1w.nii'
+plot_stat_map(
+    output + 'segment/c1sub-AAA0001_ses-test_T1w.nii', title='GM prob. map',  cmap=plt.cm.magma,
+    threshold=0.5, bg_img=anat, display_mode='z', cut_coords=range(-35, 15, 10), dim=-1);
