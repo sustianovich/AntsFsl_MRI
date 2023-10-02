@@ -199,5 +199,5 @@ output = '/output/work_preproc/_subject_id_aaa0001/'
 
 anat = output + 'gunzip_anat/sub-aaa0001_ses-001_T1w.nii'
 plot_stat_map(
-    output + 'segment/c1sub-AAA0001_ses-test_T1w.nii', title='GM prob. map',  cmap=plt.cm.magma,
+    output + 'segment/sub-aaa0001_ses-test_T1w.nii', title='GM prob. map',  cmap=plt.cm.magma,
     threshold=0.5, bg_img=anat, display_mode='z', cut_coords=range(-35, 15, 10), dim=-1);

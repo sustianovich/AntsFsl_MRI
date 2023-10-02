@@ -1,0 +1,239 @@
+[
+    {
+        "group": 1,
+        "imports": [],
+        "name": "00_selectfiles",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "00_selectfiles"
+        ],
+        "name": "01_mcflirt",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "00_selectfiles"
+        ],
+        "name": "02_resample",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "01_mcflirt",
+            "02_resample"
+        ],
+        "name": "03_coreg_step1",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "01_mcflirt",
+            "02_resample",
+            "03_coreg_step1"
+        ],
+        "name": "04_coreg_step2",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "04_coreg_step2"
+        ],
+        "name": "05_smooth",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "04_coreg_step2"
+        ],
+        "name": "06_smooth",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "01_mcflirt",
+            "02_resample",
+            "03_coreg_step1",
+            "05_smooth"
+        ],
+        "name": "07_datasink",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "01_mcflirt",
+            "02_resample",
+            "03_coreg_step1",
+            "06_smooth"
+        ],
+        "name": "08_datasink",
+        "size": 1
+    },
+    {
+        "group": 2,
+        "imports": [],
+        "name": "09_selectfiles",
+        "size": 1
+    },
+    {
+        "group": 2,
+        "imports": [
+            "09_selectfiles"
+        ],
+        "name": "10_mcflirt",
+        "size": 1
+    },
+    {
+        "group": 2,
+        "imports": [
+            "09_selectfiles"
+        ],
+        "name": "11_resample",
+        "size": 1
+    },
+    {
+        "group": 2,
+        "imports": [
+            "10_mcflirt",
+            "11_resample"
+        ],
+        "name": "12_coreg_step1",
+        "size": 1
+    },
+    {
+        "group": 2,
+        "imports": [
+            "10_mcflirt",
+            "11_resample",
+            "12_coreg_step1"
+        ],
+        "name": "13_coreg_step2",
+        "size": 1
+    },
+    {
+        "group": 2,
+        "imports": [
+            "13_coreg_step2"
+        ],
+        "name": "14_smooth",
+        "size": 1
+    },
+    {
+        "group": 2,
+        "imports": [
+            "13_coreg_step2"
+        ],
+        "name": "15_smooth",
+        "size": 1
+    },
+    {
+        "group": 2,
+        "imports": [
+            "10_mcflirt",
+            "11_resample",
+            "12_coreg_step1",
+            "14_smooth"
+        ],
+        "name": "16_datasink",
+        "size": 1
+    },
+    {
+        "group": 2,
+        "imports": [
+            "10_mcflirt",
+            "11_resample",
+            "12_coreg_step1",
+            "15_smooth"
+        ],
+        "name": "17_datasink",
+        "size": 1
+    },
+    {
+        "group": 3,
+        "imports": [],
+        "name": "18_selectfiles",
+        "size": 1
+    },
+    {
+        "group": 3,
+        "imports": [
+            "18_selectfiles"
+        ],
+        "name": "19_mcflirt",
+        "size": 1
+    },
+    {
+        "group": 3,
+        "imports": [
+            "18_selectfiles"
+        ],
+        "name": "20_resample",
+        "size": 1
+    },
+    {
+        "group": 3,
+        "imports": [
+            "19_mcflirt",
+            "20_resample"
+        ],
+        "name": "21_coreg_step1",
+        "size": 1
+    },
+    {
+        "group": 3,
+        "imports": [
+            "19_mcflirt",
+            "20_resample",
+            "21_coreg_step1"
+        ],
+        "name": "22_coreg_step2",
+        "size": 1
+    },
+    {
+        "group": 3,
+        "imports": [
+            "22_coreg_step2"
+        ],
+        "name": "23_smooth",
+        "size": 1
+    },
+    {
+        "group": 3,
+        "imports": [
+            "22_coreg_step2"
+        ],
+        "name": "24_smooth",
+        "size": 1
+    },
+    {
+        "group": 3,
+        "imports": [
+            "19_mcflirt",
+            "20_resample",
+            "21_coreg_step1",
+            "23_smooth"
+        ],
+        "name": "25_datasink",
+        "size": 1
+    },
+    {
+        "group": 3,
+        "imports": [
+            "19_mcflirt",
+            "20_resample",
+            "21_coreg_step1",
+            "24_smooth"
+        ],
+        "name": "26_datasink",
+        "size": 1
+    }
+]
