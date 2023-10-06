@@ -1,0 +1,1 @@
+bet sub-10171_T1w.nii.gz sub-10171_T1w_brain.nii.gz -f 0.30

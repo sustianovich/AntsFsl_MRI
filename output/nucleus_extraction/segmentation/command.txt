@@ -1,0 +1,1 @@
+fast -S 2 /home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI/output/nucleus_extraction/segmentation/sub-10159_T1w_brain.nii.gz /home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI/output/nucleus_extraction/segmentation/sub-10171_T1w_brain.nii.gz

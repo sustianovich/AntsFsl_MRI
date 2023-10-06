@@ -1,0 +1,24 @@
+[
+    {
+        "group": 1,
+        "imports": [],
+        "name": "0_bet",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "0_bet"
+        ],
+        "name": "1_segmentation",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "1_segmentation"
+        ],
+        "name": "2_registration",
+        "size": 1
+    }
+]

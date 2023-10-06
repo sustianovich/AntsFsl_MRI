@@ -1,0 +1,21 @@
+[
+    [
+        "in_files",
+        [
+            [
+                "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI/output/nucleus_extraction/bet/mapflow/_bet1/sub-10171_T1w_brain.nii.gz",
+                "174c0eeaeec80b2e85da9ceb6366c6c8"
+            ]
+        ]
+    ],
+    [
+        "output_type",
+        "NIFTI_GZ"
+    ],
+    [
+        "needed_outputs",
+        [
+            "restored_image"
+        ]
+    ]
+]

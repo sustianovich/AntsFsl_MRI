@@ -7,8 +7,6 @@ import os
 # nvm install node 
 # npm install -g bids-validator
 
-
-
 def run_fmriprep(bids_dir, output_dir, work_dir, participant_label, freesurfer_license):
     # Construct the fMRIPrep command as a string
     fmriprep_cmd = (
@@ -27,7 +25,7 @@ bids_dir = 'data/ds000030'
 output_dir = "data/ds000030/jobs/out"
 work_dir = "data"
 participant_label = "sub-10159"  # Replace with the participant's label
-freesurfer_license = "freesurfer_license/license.txt"
+freesurfer_license = ".freesurfer_license/license.txt"
 
 # Run fMRIPrep
 run_fmriprep(bids_dir, output_dir, work_dir, participant_label, freesurfer_license)

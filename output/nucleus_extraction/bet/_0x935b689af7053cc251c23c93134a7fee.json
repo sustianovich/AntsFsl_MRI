@@ -1,0 +1,29 @@
+[
+    [
+        "frac",
+        "0.3000000000"
+    ],
+    [
+        "in_file",
+        [
+            [
+                "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI/data/ds000030/sub-10159/anat/sub-10159_T1w.nii.gz",
+                "2bd7254de8ffcd09a084c53bee332ed6"
+            ],
+            [
+                "/home/sus/Documents/VS_CODE/AntsFsl_MRI_github/AntsFsl_MRI/data/ds000030/sub-10171/anat/sub-10171_T1w.nii.gz",
+                "15568b21a3bb4f359a0a8266bd0db86e"
+            ]
+        ]
+    ],
+    [
+        "output_type",
+        "NIFTI_GZ"
+    ],
+    [
+        "needed_outputs",
+        [
+            "out_file"
+        ]
+    ]
+]
